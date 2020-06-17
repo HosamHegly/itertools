@@ -18,7 +18,7 @@
                 : cont(cont), func(func){}
 
         class iterator{
-            decltype(*(cont.begin())) data;
+            typename C :: value_type data;
            typename  C::iterator it;
                       typename  C::iterator end;
 

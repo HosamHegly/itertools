@@ -16,14 +16,12 @@
                typename cont::iterator end;
                
                func function;
-               decltype(*(c.begin())) data;
 public:
-               explicit iterator( typename cont::iterator it,typename cont::iterator end,  func function):it(it),end(end),function(function),data(*it){
+               explicit iterator( typename cont::iterator it,typename cont::iterator end,  func function):it(it),end(end),function(function){
                    while(it!=end&&function(*it))
                    {
                        ++it;
                    }
-                   data=*it;
                    
                };
                iterator& operator =(const iterator& other)
@@ -53,8 +51,7 @@ public:
                        ++it;
                        
                    }
-                   if(it!=end)
-                   data=*it;
+                  
                    return *this;
                }
                
@@ -66,7 +63,7 @@ public:
                }
                auto operator *()
                {
-                   return data;
+                   return *it;
                }
                
            };
