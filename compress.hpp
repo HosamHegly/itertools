@@ -6,10 +6,27 @@ namespace itertools
 {
     template<typename cont , typename contbool> class compress
     {
-        cont& c;
-        contbool& c2;
+        cont c;
+        contbool c2;
         public:
-        explicit compress ( cont& c, contbool& c2) : c(c),c2(c2){
+        explicit compress ( cont c, contbool c2) : c(c),c2(c2){
+            typename cont::iterator it= c.begin();
+            
+                    typename contbool::iterator it2= c2.begin();
+           int c1=0; int c3=0;
+           while(it!=c.end())
+           {
+               ++it;
+               c1++;
+           }
+             while(it2!=c2.end())
+           {
+               ++it2;
+               c3++;
+           }
+           
+           if(c1!=c3)
+           throw std::invalid_argument ("containers must be same size");
            
     }
     

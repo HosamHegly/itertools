@@ -12,9 +12,9 @@
     class accumulate{
         Functor func;
    
-            C& cont;
+            C cont;
  public:
-        explicit accumulate(C &cont, Functor func = plus())
+        explicit accumulate(C cont, Functor func = plus())
                 : cont(cont), func(func){}
 
         class iterator{

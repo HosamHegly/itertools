@@ -5,9 +5,9 @@
        {
                        func f;
 
-           cont &c;
+           cont c;
            public:
-           explicit filterfalse (func f, cont& c):
+           explicit filterfalse (func f, cont c):
            f(f),c(c){}
            class iterator
            {
