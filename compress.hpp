@@ -1,6 +1,8 @@
 #ifndef COMPRESS_HPP
 #define COMPRESS_HPP
 #include <iostream>
+#include <vector>
+
 
 namespace itertools
 {
@@ -62,13 +64,13 @@ namespace itertools
          
          iterator& operator ++()
          {
+             do
+             {
              ++it;
              ++it2;
-             while(it!=end&&!(*it2))
-             {
-                 ++it;
-                 ++it2;
              }
+             while(it!=end&&!(*it2));
+            
              return *this;
          }
          
